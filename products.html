@@ -1,0 +1,293 @@
+<!DOCTYPE html>    
+<html lang="en">    
+<head>    
+<meta charset="UTF-8">    
+<title>Product Portfolio</title>    
+<style>   
+body {
+  background-color:rgb(223, 36, 36);
+}
+.left-image {  
+            float: left; /* Float the image to the left */  
+            width: 150px; /* Custom image width */  
+            height: auto; /* Maintain the original aspect ratio of the image */  
+            margin-right: 10px; /* Add some spacing on the right side */  
+        }  
+.header {  
+  background-color: lightgrey;  
+  text-align: center;  
+  padding: 20px;  
+}  
+.topnav {    
+  overflow: hidden;    
+  background-color: #333333;    
+}    
+.topnav a {    
+  float: left;    
+  display: block;    
+  color: white;    
+  text-align: center;    
+  padding: 14px 16px;    
+  text-decoration: none;    
+}    
+.topnav a:hover {    
+  background-color: lightgrey;    
+  color: white;    
+}  
+.products {  
+  display: flex;  
+  flex-wrap: wrap; /* If line breaks are needed */  
+}     
+.product {    
+  /* Remove text align: center; Style to display images and buttons starting from the left side */  
+  margin-bottom: 20px; /* The spacing between each product */  
+}    
+.product-item { /* Add container class */  
+  display: flex; /* Use Flex layout to display images and buttons on one line */  
+  flex-direction: column; /* The default is column, but it can also be explicitly specified */  
+  align-items: flex-start; /* Align content from the left */
+  margin-right: 10px; /* Optional: Add right margin to each project */  
+}  
+.product-item:last-child {  
+  margin-right: 0;  
+}
+.product-image {    
+  width: 250px;  
+  height: auto;  
+  display: block; /* Ensure that the image is a block level element */  
+  margin: 0; /* Remove margin as spacing has already been controlled in the. product item */  
+}    
+.product-name {    
+  margin-top: 10px; /* The spacing between buttons and images */  
+  cursor: pointer;    
+}    
+.product-modal {    
+  display: none; /* Hidden by default */  
+  position: fixed; /* Stay in place */  
+  z-index: 1; /* Sit on top */  
+  left: 0;  
+  top: 0;  
+  width: 100%; /* Full width */  
+  height: 100%; /* Full height */  
+  overflow: auto; /* Enable scroll if needed */  
+  background-color: rgba(0,0,0,0.4); /* Fallback color */  
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */  
+}  
+  
+.product-modal-content {  
+  background-color: lightgrey;  
+  margin: 15% auto; /* 15% from the top and centered */  
+  padding: 20px;  
+  border: 1px solid red;  
+  width: 50%; /* Could be more or less, depending on screen size */  
+}  
+  
+/* The Close Button */  
+.close {  
+  color: #aaa;  
+  float: right;  
+  font-size: 28px;  
+  font-weight: bold;  
+}  
+  
+.close:hover,  
+.close:focus {  
+  color: lightblue;  
+  text-decoration: none;  
+  cursor: pointer;  
+}  
+footer {  
+  background-color: #333; /* Footer background color */  
+  color: #fff; /* Text color */  
+  padding: 20px; /* Padding */  
+  text-align: center; /* Text alignment */  
+}  
+  
+footer a {  
+  color: #fff; /* Link color */  
+  text-decoration: none; /* Remove underline from links */  
+}  
+  
+footer a:hover {  
+  color: #ccc; /* Link color on hover */  
+  text-decoration: underline; /* Show underline on hover */  
+}  
+  
+</style>    
+</head>    
+<body>    
+    
+  <div class="header">
+    <img src="1.png" alt="logo" class="left-image">  
+    <h1>Welcome to my Product portfolio page </h1>  
+    <p>Here are some of my E-commerce website information.</p>  
+  </div>   
+    
+  <div class="topnav">  
+    <a href="index.html">Home</a>  
+    <a href="support.html">Customer support</a>  
+    <a href="products.html">Product portfolio</a>
+    <a href="NVB.html">NVB</a> 
+    <a href="about.html">About Us</a>
+    <a href="location.html">Geographic location</a> 
+  </div> 
+    
+<div class="products">    
+  <!-- First product -->  
+  <div class="product-item">  
+    <img src="D.png" alt="Product 1" class="product-image">  
+    <button class="product-name" onclick="showModal('productModal1')">Huawei MateBook D 16</button>  
+  </div>  
+  <div class="product-item">  
+    <img src="E.png" alt="Product 2" class="product-image">  
+    <button class="product-name" onclick="showModal('productModal2')">Lenovo Xiaoxin Pro 16</button>  
+  </div>  
+  <div class="product-item">  
+    <img src="F.png" alt="Product 3" class="product-image">  
+    <button class="product-name" onclick="showModal('productModal3')">Apple MacBook Pro</button>  
+  </div>  
+  <div class="product-item">  
+    <img src="G.png" alt="Product 4" class="product-image">  
+    <button class="product-name" onclick="showModal('productModal4')">ThinkPad X1 Carbon</button>  
+  </div>  
+  <div class="product-item">  
+    <img src="H.png" alt="Product 5" class="product-image">  
+    <button class="product-name" onclick="showModal('productModal5')">Samsung Galaxy Tab S7</button>  
+  </div>  
+  <div class="product-item">  
+    <img src="I.png" alt="Product 6" class="product-image">  
+    <button class="product-name" onclick="showModal('productModal6')">MSI MSI Titan 17 2024</button>  
+  </div>  
+  <div class="product-item">  
+    <img src="J.png" alt="Product 7" class="product-image">  
+    <button class="product-name" onclick="showModal('productModal7')">Dell XPS 13</button>  
+  </div> 
+  <div class="product-item">  
+    <img src="K.png" alt="Product 8" class="product-image">  
+    <button class="product-name" onclick="showModal('productModal8')">Asus Tianxuan 3</button>  
+  </div> 
+  <div class="product-item">  
+    <img src="L.png" alt="Product 9" class="product-image">  
+    <button class="product-name" onclick="showModal('productModal9')">HP Spectre x360</button>  
+  </div> 
+  <div class="product-item">  
+    <img src="M.png" alt="Product 10" class="product-image">  
+    <button class="product-name" onclick="showModal('productModal10')">Razer BlackWidow Chroma V2</button>  
+  </div> 
+  <!-- More products can be added like this -->  
+</div>  
+  
+<!-- Modal box for the first product -->  
+<div id="productModal1" class="product-modal">  
+  <div class="product-modal-content">  
+    <span class="close" onclick="closeModal('productModal1')">&times;</span>
+    <img src="D.png" alt="Product 1" class="product-image">  
+    <h2>Huawei MateBook D 16</h2>  
+    <p>This laptop has a delicate and exquisite design, which is grand and full of a sense of luxury. It has a powerful processor and sufficient memory, suitable for daily use, and runs smoothly.</p>  
+    <!-- Add more detailed information about the product here -->  
+  </div>  
+</div> 
+<div id="productModal2" class="product-modal">  
+    <div class="product-modal-content">  
+      <span class="close" onclick="closeModal('productModal2')">&times;</span>
+      <img src="E.png" alt="Product 2" class="product-image">  
+      <h2>Lenovo Xiaoxin Pro 16</h2>  
+      <p>This is a mid to high end lightweight laptop, equipped with a high-resolution screen and long battery life, suitable for students and office workers.</p>  
+      <!-- Add more detailed information about the product here -->  
+    </div>  
+  </div> 
+  <div id="productModal3" class="product-modal">  
+    <div class="product-modal-content">  
+      <span class="close" onclick="closeModal('productModal3')">&times;</span>
+      <img src="F.png" alt="Product 3" class="product-image">  
+      <h2>Apple MacBook Pro 14</h2>  
+      <p>Apple's MacBook Pro series is a representative of high-end computers, and this 14 inch MacBook Pro has excellent screens and performance, making it suitable for professionals to use</p>  
+      <!-- Add more detailed information about the product here -->  
+    </div>  
+  </div>
+  <div id="productModal4" class="product-modal">  
+    <div class="product-modal-content">  
+      <span class="close" onclick="closeModal('productModal4')">&times;</span>
+      <img src="G.png" alt="Product 4" class="product-image">  
+      <h2>ThinkPad X1 Carbon</h2>  
+      <p>The X1 Carbon series of ThinkPad has always been a representative of business laptops. This computer has a sturdy body and excellent keyboard feel, making it suitable for business people to use.</p>  
+      <!-- Add more detailed information about the product here -->  
+    </div>  
+  </div>
+  <div id="productModal5" class="product-modal">  
+    <div class="product-modal-content">  
+      <span class="close" onclick="closeModal('productModal5')">&times;</span>
+      <img src="H.png" alt="Product 5" class="product-image">  
+      <h2>Samsung Galaxy Tab S7</h2>  
+      <p>The Samsung Galaxy Tab S7 is a powerful tablet computer suitable for various scenarios. It is equipped with high-performance processors and large storage capacity, providing users with a smooth operating experience and rich storage space. Meanwhile, its exquisite display screen and excellent audio performance also bring users a better entertainment experience.</p>  
+      <!-- Add more detailed information about the product here -->  
+    </div>  
+  </div>
+  <div id="productModal6" class="product-modal">  
+    <div class="product-modal-content">  
+      <span class="close" onclick="closeModal('productModal6')">&times;</span>
+      <img src="I.png" alt="Product 6" class="product-image">  
+      <h2>MSI MSI Titan 17 2024</h2>  
+      <p>This laptop is a cost-effective product from MSI, with rich features and has received widespread praise from users. It is equipped with high-performance processors and graphics cards, suitable for high-performance needs such as gaming and image processing.</p>  
+      <!-- Add more detailed information about the product here -->  
+    </div>  
+  </div>
+  <div id="productModal7" class="product-modal">  
+    <div class="product-modal-content">  
+      <span class="close" onclick="closeModal('productModal7')">&times;</span>
+      <img src="J.png" alt="Product 7" class="product-image">  
+      <h2>Dell XPS 13</h2>  
+      <p>Dell's XPS series has always been a leader in thin and lightweight laptops, and this XPS 13 has a delicate appearance and excellent performance, making it the first choice for quality conscious users.</p>  
+      <!-- Add more detailed information about the product here -->  
+    </div>  
+  </div>
+  <div id="productModal8" class="product-modal">  
+    <div class="product-modal-content">  
+      <span class="close" onclick="closeModal('productModal8')">&times;</span>
+      <img src="K.png" alt="Product 8" class="product-image">  
+      <h2>Asus Tianxuan 3</h2>  
+      <p>This is a high-performance gaming laptop equipped with the latest processor and graphics card, with excellent cooling system and cool appearance, making it the best choice for gamers.</p>  
+      <!-- Add more detailed information about the product here -->  
+    </div>  
+  </div>
+  <div id="productModal9" class="product-modal">  
+    <div class="product-modal-content">  
+      <span class="close" onclick="closeModal('productModal9')">&times;</span>
+      <img src="L.png" alt="Product 9" class="product-image">  
+      <h2>HP Spectre x360</h2>  
+      <p>This is a flippable 2-in-1 laptop that can be used as both a laptop and a tablet, making it very suitable for users who need flexibility.</p>  
+      <!-- Add more detailed information about the product here -->  
+    </div>  
+  </div>
+  <div id="productModal10" class="product-modal">  
+    <div class="product-modal-content">  
+      <span class="close" onclick="closeModal('productModal10')">&times;</span>
+      <img src="M.png" alt="Product 10" class="product-image">  
+      <h2>Razer BlackWidow Chroma V2</h2>  
+      <p>Razer BlackWidow Chroma V2 is a high-end mechanical keyboard suitable for gaming and office settings. It adopts high-quality mechanical buttons and RGB backlight design, providing users with an excellent typing experience and personalized visual effects. Meanwhile, its macro programming capabilities and comfortable button layout make it the preferred choice for professional users.</p>  
+      <!-- Add more detailed information about the product here -->  
+    </div>  
+  </div>
+  
+<script>  
+// Function for displaying modal boxes  
+function showModal(modalId) {  
+  var modal = document.getElementById(modalId);  
+  modal.style.display = "block";  
+}  
+  
+// Function to close modal boxes  
+function closeModal(modalId) {  
+  var modal = document.getElementById(modalId);  
+  modal.style.display = "none";  
+}  
+</script>
+
+<footer>  
+    <div class="footer-content">  
+    <p>Copyright &copy; 2024 Sponge Bob's E-commerce website. All rights reserved.</p>  
+    
+  </footer>  
+  
+</body>  
+</html>
